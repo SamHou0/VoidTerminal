@@ -22,16 +22,15 @@ namespace VoidTerminal
                         input = Console.ReadLine();
                         RunApp.Run(input);
                         continue;
-                    case "tasks":
-                        Console.WriteLine(
-                            "一个原神玩家每天必须做的事情：| 米游社 | 委托 | 树脂 | 纪行 | 活动 |");
-                        continue;
                     case "void":
                         Console.Clear();
                         Void.EnterVoid();
                         continue;
                     case "clr":
                         Console.Clear();
+                        continue;
+                    case "clean":
+                        DesktopCleanner.CleanDesktop();
                         continue;
                     default:
                         Console.WriteLine(Error.NoReturn);
