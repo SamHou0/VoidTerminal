@@ -7,6 +7,7 @@ namespace VoidTerminal
         static void Main(string[] args)
         {
             Console.WriteLine("Void Terminal v" + Assembly.GetExecutingAssembly().GetName().Version);
+            Console.WriteLine("    =    \r\n   = =\r\n  =   =\r\n =     =\r\n  =   =\r\n   = =\r\n    =");
             Console.WriteLine("输入help获取帮助，按下Ctrl+C可退出。");
             while (true)
             {
@@ -26,11 +27,17 @@ namespace VoidTerminal
                         Console.Clear();
                         Void.EnterVoid();
                         continue;
-                    case "clr":
-                        Console.Clear();
-                        continue;
                     case "clean":
                         DesktopCleanner.CleanDesktop();
+                        continue;
+                    case "sear":
+                        TagSearch.Search();
+                        continue;
+                    case "restore":
+                        DesktopCleanner.RestoreDesktop();
+                        continue;
+                    case "clr":
+                        Console.Clear();
                         continue;
                     default:
                         Console.WriteLine(Error.NoReturn);

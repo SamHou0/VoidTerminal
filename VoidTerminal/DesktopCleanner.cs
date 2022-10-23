@@ -60,5 +60,29 @@ namespace VoidTerminal
             }
             Console.WriteLine("执行完毕。");
         }
+        internal static void RestoreDesktop()
+        {
+            string[] directories= Directory.GetDirectories(location);
+            //获取目标文件
+            foreach (string directory in directories)
+            {
+                string[] files= Directory.GetFiles(directory);
+                //移动所有目标文件
+                foreach (string file in files)
+                {
+                    if (Path.GetExtension(file)==Path.GetFileName(Path.GetDirectoryName(file)))//TODO
+                    {
+                        File.Move(file,location+"\\"+Path.GetFileName(file));
+                    }
+                }
+            }
+            //删除空文件夹
+            foreach (string directory in directories)
+            {
+                if(Directory.GetFiles(directory).Length==0)
+                    Directory.Delete(directory, true);
+            }
+            Console.WriteLine("执行完毕。");
+        }
     }
 }
