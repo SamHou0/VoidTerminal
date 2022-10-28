@@ -13,6 +13,7 @@ namespace VoidTerminal
             "help - 打开这个列表"+Environment.NewLine+
             "void - 查看虚空数据库"+Environment.NewLine+
             "clean - 桌面整理"+Environment.NewLine+
+            "restore - 撤销桌面整理"+Environment.NewLine+
             "clr - 清空虚空终端"+Environment.NewLine+
             "sear - 标签搜索";
 
